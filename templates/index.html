@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Blogz by Author</h1>
+
+    <hr/>
+    {% if authors|length == 0 %}
+    <p>Nothing to show here</p>
+    {% else %}
+        {% for author in authors %}
+          <a href="/user-posts?id={{ author.id }}"><h2>{{author.username}}</h2></a>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
